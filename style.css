@@ -1,0 +1,147 @@
+body {
+  margin: 0;
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  line-height: 1.4;
+  background: whitesmoke;
+  color: #333333; }
+
+ul {
+  list-style: none; }
+
+h1 {
+  font-size: 3rem;
+  font-weight: 200;
+  margin: 1em; }
+
+h2 {
+  font-size: 1.25rem;
+  font-weight: 200;
+  margin: 1em; }
+
+h4 {
+  font-size: 30px;
+  font-weight: 300;
+  line-height: 1em;
+  margin: 0; }
+
+.btn-group {
+  margin: 1em 0; }
+
+.btn {
+  border-radius: 5px;
+  padding: 0.5em 1em;
+  border: 1px solid #dddddd;
+  color: white;
+  background: #327fc7; }
+
+#hero {
+  padding: 40px 0;
+  text-align: center;
+  background: #222;
+  color: white;
+  overflow: hidden; }
+  #hero h1 {
+    margin-bottom: 0; }
+  #hero h2 {
+    font-size: 1rem;
+    opacity: 0.6; }
+
+#wrapper {
+  margin: 3em 100px; }
+  #wrapper li {
+    border: 1px solid #dddddd;
+    border-radius: 5px;
+    background: white;
+    min-height: 100px;
+    margin-bottom: 3em;
+    padding: 40px 20px;
+    overflow: hidden; }
+  #wrapper h4 {
+    text-align: center;
+    margin-bottom: 20px; }
+
+input, select {
+  padding: 5px 5px;
+  border-radius: 2px;
+  border: 1px solid #dddddd; }
+
+#settings {
+  text-align: center; }
+  #settings .center {
+    display: inline-block;
+    text-align: left; }
+  #settings #watermark-container {
+    display: inline-block;
+    vertical-align: top;
+    margin-right: 20px; }
+  #settings fieldset {
+    display: inline-block; }
+    #settings fieldset > div {
+      display: inline-block;
+      margin-right: 10px; }
+
+#uploaded {
+  text-align: center; }
+  #uploaded > div {
+    display: inline-block;
+    margin: 10px; }
+  #uploaded .meta {
+    font-size: 0.8em;
+    margin: 2px 5px; }
+
+#result-container {
+  text-align: center; }
+  #result-container > div {
+    display: inline-block;
+    margin: 10px; }
+
+fieldset {
+  border: 1px solid #dddddd;
+  border-radius: 5px;
+  padding: 15px; }
+  fieldset legend {
+    display: none; }
+  fieldset .control {
+    margin: 7px 0; }
+  fieldset label {
+    display: inline-block;
+    min-width: 150px;
+    text-align: right;
+    margin-right: 10px; }
+
+.drop-area {
+  border-radius: 5px;
+  background: radial-gradient(black 15%, transparent 16%) 0 0, radial-gradient(black 15%, transparent 16%) 8px 8px, radial-gradient(rgba(255, 255, 255, 0.1) 15%, transparent 20%) 0 1px, radial-gradient(rgba(255, 255, 255, 0.1) 15%, transparent 20%) 8px 9px;
+  background-color: #282828;
+  background-size: 16px 16px;
+  min-height: 50px;
+  position: relative; }
+  .drop-area p {
+    color: white;
+    text-align: center;
+    pointer-events: none;
+    position: absolute;
+    width: 100%;
+    top: 50%;
+    line-height: 1.0;
+    margin-top: -0.5em; }
+  .drop-area.drag-over p {
+    display: none; }
+
+.image-container {
+  width: 200px;
+  height: 200px;
+  border: 1px solid #dddddd;
+  border-radius: 5px;
+  padding: 5px;
+  position: relative;
+  overflow: hidden; }
+  .image-container img {
+    max-width: 200px;
+    max-height: 200px;
+    position: absolute;
+    margin: auto;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0; }

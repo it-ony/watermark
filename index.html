@@ -1,0 +1,128 @@
+<!doctype html>
+<html lang="en-US">
+<head>
+    <meta charset="UTF-8">
+    <title>Watermark</title>
+
+    <link rel="stylesheet" type="text/css" href="style.css"/>
+</head>
+<body>
+
+<section id="hero">
+    <h1>Watermarks for your photos.</h1>
+
+    <h2>Generated in your awesome browser. Just drag & drop & drop out.</h2>
+</section>
+
+<ul id="wrapper">
+    <li>
+        <h4>Upload watermark</h4>
+
+        <div id="watermark-upload" class="drop-area">
+            <p>
+                Drop your watermark image here.
+            </p>
+        </div>
+
+    </li>
+
+
+    <li id="settings">
+        <h4>Configure your watermark</h4>
+
+        <div class="center">
+            <div id="watermark-container">
+            </div>
+
+            <fieldset>
+                <legend>Parameter</legend>
+
+                <div>
+                    <div class="control">
+                        <label for="position">Position</label>
+                        <select id="position">
+                            <option value="bottomLeft">Bottom left</option>
+                            <option value="bottomRight">Bottom right</option>
+                            <option value="topLeft">Top left</option>
+                            <option value="topRight">Top right</option>
+                        </select>
+                    </div>
+
+                    <div class="control">
+                        <label for="opacity">Opacity</label>
+                        <input type="number" max="1" min="0" step="0.1" id="opacity" value="0.8"/>
+                    </div>
+
+                    <div class="control">
+                        <label for="scale">Scale</label>
+                        <input type="number" max="1" min="0" step="0.1" id="scale" value="1"/>
+                    </div>
+
+                    <div class="control">
+                        <label for="xOffset">Horizontal offset</label>
+                        <input type="number" id="xOffset" value="0.5"/>
+                    </div>
+
+                    <div class="control">
+                        <label for="yOffset">Vertical offset</label>
+                        <input type="number" id="yOffset" value="0.5"/>
+                    </div>
+                </div>
+                <div>
+                    <div class="control">
+                        <label for="imageHeight">Reference height</label>
+                        <input type="number" step="1" id="imageHeight" value="13"/>
+                    </div>
+
+                    <div class="control">
+                        <label for="watermarkHeight">Watermark height</label>
+                        <input type="number" step="1" id="watermarkHeight" value="2"/>
+                    </div>
+
+                </div>
+            </fieldset>
+        </div>
+
+        <div>
+            <div class="btn-group">
+                <a class="btn" id="progress">Progress</a>
+            </div>
+
+            <div class="progress-bar">
+                <div class="progress"></div>
+            </div>
+        </div>
+
+    </li>
+
+
+    <li id="images">
+        <h4>Upload images</h4>
+
+        <div id="upload" class="drop-area">
+            <p>
+                Drop your images here.
+            </p>
+        </div>
+
+        <div id="uploaded">
+        </div>
+
+    </li>
+
+    <li id="result">
+        <h4>Result</h4>
+
+        <div id="result-container">
+        </div>
+
+    </li>
+
+
+</ul>
+
+<script type="text/javascript" src="flow.js"></script>
+<script type="text/javascript" src="watermark.js"></script>
+
+</body>
+</html>
