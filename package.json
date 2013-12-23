@@ -1,0 +1,19 @@
+{
+  "name": "watermark",
+  "version": "0.1.0",
+  "description": "Generate watermark for your photos in the browser.",
+  "main": "index.html",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/it-ony/watermark.git"
+  },
+  "author": "Tony Findeisen <npm@it-ony.de>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/it-ony/watermark/issues"
+  },
+  "homepage": "https://github.com/it-ony/watermark"
+}
