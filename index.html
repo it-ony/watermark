@@ -24,6 +24,9 @@
             </p>
         </div>
 
+        <div class="watermark-container">
+        </div>
+
     </li>
 
 
@@ -69,6 +72,16 @@
                     </div>
                 </div>
                 <div>
+
+                    <div class="control">
+                        <label for="format">Format</label>
+                        <select id="format">
+                            <option value="image/jpg">jpg</option>
+                            <option value="image/png">png</option>
+                        </select>
+                    </div>
+
+
                     <div class="control">
                         <label for="imageHeight">Reference height</label>
                         <input type="number" step="1" id="imageHeight" value="13"/>
@@ -83,18 +96,7 @@
             </fieldset>
         </div>
 
-        <div>
-            <div class="btn-group">
-                <a class="btn" id="progress">Progress</a>
-            </div>
-
-            <div class="progress-bar">
-                <div class="progress"></div>
-            </div>
-        </div>
-
     </li>
-
 
     <li id="images">
         <h4>Upload images</h4>
@@ -108,21 +110,19 @@
         <div id="uploaded">
         </div>
 
-    </li>
-
-    <li id="result">
-        <h4>Result</h4>
-
-        <div id="result-container">
+        <div class="btn-group">
+            <a class="btn" id="progress">Progress</a>
         </div>
 
     </li>
+
 
 
 </ul>
 
 <script type="text/javascript" src="flow.js"></script>
 <script type="text/javascript" src="watermark.js"></script>
+<script type="text/javascript" src="canvas-to-blob.js"></script>
 
 </body>
 </html>

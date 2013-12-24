@@ -25,14 +25,20 @@ h4 {
   margin: 0; }
 
 .btn-group {
-  margin: 1em 0; }
+  margin: 1em 0;
+  text-align: center; }
 
 .btn {
   border-radius: 5px;
   padding: 0.5em 1em;
   border: 1px solid #dddddd;
   color: white;
-  background: #327fc7; }
+  background: #327fc7;
+  display: inline-block; }
+
+a {
+  text-decoration: none;
+  color: #327fc7; }
 
 #hero {
   padding: 40px 0;
@@ -53,6 +59,8 @@ h4 {
     border-radius: 5px;
     background: white;
     min-height: 100px;
+    max-width: 960px;
+    margin: 0 auto;
     margin-bottom: 3em;
     padding: 40px 20px;
     overflow: hidden; }
@@ -89,11 +97,13 @@ input, select {
     font-size: 0.8em;
     margin: 2px 5px; }
 
-#result-container {
+#result {
   text-align: center; }
-  #result-container > div {
+  #result .result-container {
     display: inline-block;
     margin: 10px; }
+    #result .result-container > div {
+      display: inline-block; }
 
 fieldset {
   border: 1px solid #dddddd;

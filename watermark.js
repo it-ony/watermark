@@ -8,8 +8,7 @@
             return Array.prototype.slice.call(document.querySelectorAll(selector));
         },
         watermark,
-        files = [],
-        output = [];
+        files = [];
 
     $$(".drop-area").forEach(function (dropArea) {
 
@@ -106,11 +105,13 @@
             watermarkHeight = parseFloat($("#watermarkHeight").value) || 2,
             imageHeight = parseFloat($("#imageHeight").value) || 13,
             xOffset = parseFloat($("#xOffset").value),
-            yOffset = parseFloat($("#yOffset").value);
+            yOffset = parseFloat($("#yOffset").value),
+            format = $("#format").selectedOptions[0].value,
+            extension = format.split("/")[1];
 
         //noinspection JSValidateTypes
         flow()
-            .seq("watermark", function(cb) {
+            .seq("watermark", function (cb) {
                 loadFileAsImage(watermark, cb);
             })
             .seqEach(files, function (file, cb) {
@@ -122,7 +123,7 @@
                     .seq("image", function (cb) {
                         loadFileAsImage(file, cb);
                     })
-                    .seq(function () {
+                    .seq("result", function (cb) {
                         var canvas = document.createElement("canvas"),
                             image = this.vars.image;
 
@@ -149,27 +150,31 @@
 
                         progress++;
 
-                        var img = new Image();
-                        var url = canvas.toDataURL();
-                        img.src = url;
+                        canvas.toBlob(function(blob) {
 
-                        output.push(url);
+                            var e = document.createEvent('MouseEvents'),
+                                a = document.createElement('a');
+
+                            a.download = file.name.replace(/\.\w+$/, "") + "_watermark." + extension;
+                            a.href = window.URL.createObjectURL(blob);
+                            a.dataset.downloadurl = [format, a.download, a.href].join(':');
+
+                            e.initMouseEvent('click', true, false, window, 0, 0, 0, 0, 0, false, false, false, false, 0, null);
+                            a.dispatchEvent(e);
+
+                            cb();
+                        }, format, 0.8);
+
+
                     })
                     .exec(cb);
             })
-            .seq(function() {
-
-                var resultContainer = $("#result-container");
-
-                output.forEach(function(imageSrc) {
-                    resultContainer.appendChild(createImagePreview(imageSrc))
-                });
-            })
             .exec(function (err) {
-                console.log(err);
+                err && console.error(err);
             });
 
     });
+
 
     function loadFileAsImage(file, callback) {
 
@@ -185,7 +190,7 @@
             callback(e || true);
         };
 
-        reader.onerror = function(evt) {
+        reader.onerror = function (evt) {
             callback(evt || true);
         };
 
